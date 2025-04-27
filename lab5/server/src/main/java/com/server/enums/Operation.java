@@ -1,0 +1,31 @@
+package com.server.enums;
+
+public enum Operation {
+    // Stock CRUD
+    CREATE_STOCK,
+    READ_STOCK_DATA,
+    UPDATE_STOCK,
+    DELETE_STOCK,
+
+    // User CRUD
+    CREATE_USER,
+    READ_USER,
+    UPDATE_USER,
+    DELETE_USER,
+
+    // GET ALL
+    GET_ALL_COMPANIES,
+    GET_ALL_STOCKS,
+    GET_ALL_USERS,
+    GET_ALL_ROLES,
+
+    // MANY-TO-MANY RELATIONS
+    GET_COMPANIES_BY_STOCK,
+    JOIN_COMPANY_STOCK,
+    SEPARATE_COMPANY_STOCK,
+
+    // SYSTEM
+    LOGIN,
+    REGISTER,
+    DISCONNECT
+}
