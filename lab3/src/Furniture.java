@@ -1,0 +1,3 @@
+interface Furniture {
+    void use();
+}
