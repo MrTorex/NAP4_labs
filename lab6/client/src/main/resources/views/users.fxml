@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0"
+            prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.gui.controllers.UsersController">
+    <Label layoutX="225.0" layoutY="-4.0" style="-fx-text-fill: #2c3e50;" text="Управление пользователями">
+        <font>
+            <Font name="System Bold" size="24.0"/>
+        </font>
+    </Label>
+    <TableView fx:id="usersTable" layoutY="43.0" prefHeight="425.0" prefWidth="800.0">
+        <columns>
+            <TableColumn fx:id="usernameColumn" prefWidth="200.0" text="Имя пользователя"/>
+            <TableColumn fx:id="firstNameColumn" prefWidth="200.0" text="Имя"/>
+            <TableColumn fx:id="lastNameColumn" prefWidth="200.0" text="Фамилия"/>
+            <TableColumn fx:id="patronymicColumn" prefWidth="200.0" text="Отчество"/>
+        </columns>
+    </TableView>
+    <VBox alignment="BOTTOM_RIGHT" layoutX="595.0" layoutY="436.0" prefHeight="200.0" prefWidth="190.0" spacing="10.0">
+        <padding>
+            <Insets bottom="5.0"/>
+        </padding>
+        <Button fx:id="eraseButton" mnemonicParsing="false" onAction="#onEraseButton"
+                style="-fx-background-color: #99b0a8;" text="Стереть">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Button>
+        <Button fx:id="delUserButton" mnemonicParsing="false" onAction="#onDelUserButton"
+                style="-fx-background-color: #e06441;" text="Удалить">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Button>
+        <Button fx:id="updateUserButton" mnemonicParsing="false" onAction="#onUpdateUserButton"
+                style="-fx-background-color: #d6ed6f;" text="Отредактировать">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Button>
+    </VBox>
+    <HBox layoutX="14.0" layoutY="485.0" prefHeight="150.0" prefWidth="550.0">
+        <VBox prefHeight="200.0" prefWidth="275.0" spacing="10.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+            <TextField fx:id="usernameField" prefHeight="26.0" prefWidth="250.0"
+                       promptText="Введите имя пользователя">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </TextField>
+            <PasswordField fx:id="passwordField" promptText="Введите пароль">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </PasswordField>
+            <PasswordField fx:id="confirmPasswordField" promptText="Подтвердите пароль">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </PasswordField>
+            <ComboBox fx:id="rolesComoBox" prefHeight="26.0" prefWidth="150.0" promptText="Выберите роль"/>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="275.0" spacing="10.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+            <TextField fx:id="firstNameField" prefHeight="26.0" prefWidth="250.0" promptText="Введите имя">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </TextField>
+            <TextField fx:id="lastNameField" prefHeight="26.0" prefWidth="250.0" promptText="Введите фамилию">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </TextField>
+            <TextField fx:id="patronymicField" prefHeight="26.0" prefWidth="250.0"
+                       promptText="Введите отчество">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </TextField>
+        </VBox>
+    </HBox>
+    <Button fx:id="reInitButton" layoutX="10.0" layoutY="9.0" mnemonicParsing="false" onAction="#onReInitButton"
+            text="Обновить информацию"/>
+    <Button fx:id="backButton" layoutX="732.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBackButton"
+            text="В меню"/>
+</AnchorPane>

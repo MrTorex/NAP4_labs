@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0"
+            prefWidth="810.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.gui.controllers.StocksController">
+    <TableView fx:id="stocksTable" layoutX="300.0" layoutY="47.0" prefHeight="400.0" prefWidth="500.0">
+        <columns>
+            <TableColumn fx:id="stockNameColumn" prefWidth="200.0" text="Название акции"/>
+            <TableColumn fx:id="stockTickerColumn" prefWidth="100.0" text="Тикер"/>
+            <TableColumn fx:id="stockPriceColumn" prefWidth="100.0" text="Цена"/>
+            <TableColumn fx:id="stockQuantityColumn" prefWidth="100.0" text="Количество"/>
+        </columns>
+    </TableView>
+    <Separator layoutY="446.0" prefHeight="0.0" prefWidth="302.0"/>
+    <Separator layoutX="397.0" layoutY="446.0" orientation="VERTICAL" prefHeight="200.0"/>
+    <TableView fx:id="companiesTable" layoutX="1.0" layoutY="47.0" prefHeight="200.0" prefWidth="275.0">
+        <columns>
+            <TableColumn fx:id="companyNameColumn" prefWidth="275.0" text="Компания"/>
+        </columns>
+    </TableView>
+    <ComboBox fx:id="companiesComboBox" layoutX="39.0" layoutY="255.0" prefHeight="26.0" prefWidth="250.0"
+              promptText="Выберите компанию"/>
+    <TextArea fx:id="infoArea" editable="false" layoutX="397.0" layoutY="446.0" prefHeight="200.0" prefWidth="398.0"
+              promptText="Тут будет отображаться информация об акции" wrapText="true">
+        <font>
+            <Font size="18.0"/>
+        </font>
+    </TextArea>
+    <VBox alignment="CENTER_RIGHT" layoutX="29.0" layoutY="288.0" prefHeight="150.0" prefWidth="260.0" spacing="10.0">
+        <Button fx:id="delCompanyButton" mnemonicParsing="false" onAction="#onDelCompanyButton"
+                style="-fx-background-color: #e06441;" text="Убрать компанию">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Button>
+        <Button fx:id="addCompanyButton" mnemonicParsing="false" onAction="#onAddCompanyButton"
+                style="-fx-background-color: #90fcd8;" text="Добавить компанию">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Button>
+    </VBox>
+    <HBox layoutX="8.0" layoutY="500.0" prefHeight="200.0" prefWidth="700.0">
+        <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="190.0">
+            <Button fx:id="addStockButton" mnemonicParsing="false" onAction="#onAddStockButton"
+                    style="-fx-background-color: #6fed9b;" text="Создать">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </Button>
+        </VBox>
+        <VBox alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="190.0" spacing="10.0">
+            <Button fx:id="eraseButton" mnemonicParsing="false" onAction="#onEraseButton"
+                    style="-fx-background-color: #99b0a8;" text="Стереть">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </Button>
+            <Button fx:id="delStockButton" mnemonicParsing="false" onAction="#onDelStockButton"
+                    style="-fx-background-color: #e06441;" text="Удалить">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </Button>
+            <Button fx:id="updateStockButton" mnemonicParsing="false" onAction="#onUpdateStockButton"
+                    style="-fx-background-color: #d6ed6f;" text="Отредактировать">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </Button>
+        </VBox>
+    </HBox>
+    <TextField fx:id="stockNameField" layoutX="14.0" layoutY="460.0" prefHeight="30.0" prefWidth="373.0"
+               promptText="Введите название акции">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </TextField>
+    <TextField fx:id="tickerField" layoutX="14.0" layoutY="507.0" prefHeight="26.0" prefWidth="200.0"
+               promptText="Введите тикер акции">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </TextField>
+    <TextField fx:id="priceField" layoutX="14.0" layoutY="553.0" prefHeight="26.0" prefWidth="200.0"
+               promptText="Введите цену акции">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </TextField>
+    <TextField fx:id="quantityField" layoutX="14.0" layoutY="599.0" prefHeight="26.0" prefWidth="200.0"
+               promptText="Введите количество">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </TextField>
+    <Label layoutX="264.0" layoutY="-4.0" style="-fx-text-fill: #2c3e50;" text="Управление акциями">
+        <font>
+            <Font name="System Bold" size="24.0"/>
+        </font>
+    </Label>
+    <Button fx:id="reInitButton" layoutX="9.0" layoutY="10.0" mnemonicParsing="false" onAction="#onReInitButton"
+            text="Обновить информацию"/>
+    <Button fx:id="backButton" layoutX="732.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBackButton"
+            text="В меню"/>
+</AnchorPane>
